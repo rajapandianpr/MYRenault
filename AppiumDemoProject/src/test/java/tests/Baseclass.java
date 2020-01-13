@@ -6,8 +6,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -31,9 +33,9 @@ public class Baseclass {
 	  	
 	  DesiredCapabilities caps = new DesiredCapabilities();
 	  caps.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
-	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"8.1");
-	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android Emulator");
-	  caps.setCapability(MobileCapabilityType.UDID,"emulator-5554");
+	  caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"9");
+	  caps.setCapability(MobileCapabilityType.DEVICE_NAME,"PL2GAMG870202870");
+	 // caps.setCapability(MobileCapabilityType.UDID,"emulator-5554");
 	  caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\amsaleka\\apps\\reno.apk");
 	  
 	  caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,90); 
@@ -46,28 +48,13 @@ public class Baseclass {
 	  driver = new AppiumDriver<MobileElement>(url,caps);
 	  
 	  //login credentials
-	  caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,90);
+	//  caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,90);
+	  
+	  driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
 		 
-	  MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.widget.Button[1]");
-	  el2.click();
-	  MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[3]/android.widget.Button[2]");
-	  el3.click();
-	  MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View");
-	  el4.click();
-	  MobileElement el7 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View");
-	  el7.click();
-	  el7.sendKeys("9841676067");
-	  MobileElement el8 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View");
-	  el8.click();
-	  el8.sendKeys("dhina12");
-	  MobileElement el9 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View/android.widget.Button");
-	  el9.click();
-
-	  
-	  
+	 driver.findElement(By.className("//android.widget.Button[@text='RENAULT OWNER'and @index='0']")).click();
 	  
 	                                                                                                                                                                                                                                                                                                                                                                                                     
-	 
 
   }
    
